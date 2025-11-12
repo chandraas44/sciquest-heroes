@@ -1,14 +1,11 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/+esm';
-import { supabaseConfig } from './config.js';
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from './config.js';
 
-const supabaseUrl = supabaseConfig.url;
-const supabaseAnonKey = supabaseConfig.anonKey;
-
-if (!supabaseUrl || !supabaseAnonKey) {
+if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
     console.error('Missing Supabase configuration');
 }
 
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 let isSignUpMode = false;
 let accountType = '';

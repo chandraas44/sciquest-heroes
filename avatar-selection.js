@@ -1,10 +1,7 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/+esm';
-import { supabaseConfig } from './config.js';
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from './config.js';
 
-const supabaseUrl = supabaseConfig.url;
-const supabaseAnonKey = supabaseConfig.anonKey;
-
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 const avatars = [
     { id: 'bolt', name: 'Bolt', image: 'assets/avatars/Bolt.png' },
