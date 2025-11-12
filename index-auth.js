@@ -1,5 +1,3 @@
-console.log("🔍 Supabase env check:", import.meta.env.VITE_SUPABASE_URL);
-
 import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
@@ -8,14 +6,14 @@ const supabase = createClient(
 );
 
 // ✅ Test query
-(async () => {
-  const { data, error } = await supabase.from("stories").select("*").limit(1);
-  if (error) {
-    console.error("❌ Supabase test query failed:", error.message);
-  } else {
-    console.log("✅ Supabase connected successfully! Sample data:", data);
-  }
-})();
+//(async () => {
+ // const { data, error } = await supabase.from("stories").select("*").limit(1);
+ // if (error) {
+  //  console.error("❌ Supabase test query failed:", error.message);
+  //} else {
+  //  console.log("✅ Supabase connected successfully! Sample data:", data);
+ // }
+// })();
 
 
 async function checkAuthAndUpdateUI() {
