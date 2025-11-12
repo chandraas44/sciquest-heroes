@@ -7,7 +7,7 @@ const supabase = createClient(
 );
 
 (async () => {
-  const { data, error } = await supabase.from("YOUR_TABLE_NAME").select("*").limit(1);
+  const { data, error } = await supabase.from("stories").select("*").limit(1);
   if (error) {
     console.error("❌ Supabase test query failed:", error.message);
   } else {
